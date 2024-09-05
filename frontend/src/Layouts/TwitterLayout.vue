@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue';
-import router from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 import Twitter from 'vue-material-design-icons/Twitter.vue'
 import Magnify from 'vue-material-design-icons/Magnify.vue'
 import DotsHorizontal from 'vue-material-design-icons/DotsHorizontal.vue'
@@ -15,5 +15,5 @@ import ArrowLeft from 'vue-material-design-icons/ArrowLeft.vue'
 </script>
 
 <template>
-    
+    <slot/>
 </template>

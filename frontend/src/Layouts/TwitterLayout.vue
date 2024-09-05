@@ -24,6 +24,10 @@ import MenuItem from '@/components/MenuItem.vue'
                 </div>
 
                 <MenuItem iconString="Home" />
+                <MenuItem iconString="Explore" />
+                <MenuItem iconString="Notifications" />
+                <MenuItem iconString="Messages" />
+                <MenuItem iconString="Profile" />
             </div>
         </div>
     </div>

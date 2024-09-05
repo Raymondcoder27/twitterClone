@@ -27,7 +27,19 @@ import MenuItem from '@/components/MenuItem.vue'
                 <MenuItem iconString="Explore" />
                 <MenuItem iconString="Notifications" />
                 <MenuItem iconString="Messages" />
+                <!-- <MenuItem iconString="Grok" /> -->
                 <MenuItem iconString="Profile" />
+                <MenuItem iconString="More" />
+
+
+                <button class="lg:w-full mt-8 ml-2 text-white font-extrabold p-3 px-3 rounded-full cursor-pointer bg-[#1C9CEF]">
+                    <span class="lg:block hidden">
+                        Post
+                    </span>
+                    <span class="block lg:hidden">
+                        <Feather />
+                    </span>
+                </button>
             </div>
         </div>
     </div>

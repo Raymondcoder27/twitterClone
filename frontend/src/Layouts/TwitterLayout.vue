@@ -49,6 +49,13 @@ import MenuItem from '@/components/MenuItem.vue'
                         <div class="w-full text-white font-extrabold p-4 text-[22px]">
                             Home
                         </div>
+                        <div class="flex">
+                            <div class="flex items-center justify-center hover:bg-gray-500 p-4 text-white font-extrabold text-[17px] w-full h-[60px]">
+                                <div class="inline-block text-center border-b-4 h-[68px] border-b-[#1C9CEF]">
+                                    <div class="my-auto mt-4">For you</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

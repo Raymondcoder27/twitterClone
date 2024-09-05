@@ -55,9 +55,17 @@ import MenuItem from '@/components/MenuItem.vue'
                                     <div class="my-auto mt-4">For you</div>
                                 </div>
                             </div>
+
+                            <div class=" hover:bg-gray-500 p-4 text-gray-500 font-extrabold text-[17px] w-full h-[60px]">
+                                <div class="text-center">Following</div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="absolute top-0 z-0 h-full overflow-auto scrollbar-hide">
+                
             </div>
         </div>
     </div>

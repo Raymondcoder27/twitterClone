@@ -41,6 +41,17 @@ import MenuItem from '@/components/MenuItem.vue'
                     </span>
                 </button>
             </div>
+
+
+            <div class="border-x border-gray-800 relative lg:w-7/12 w-11/12">
+                <div class="bg-black bg-opacity-50 backdrop-blur-md z-10 absolute w-full">
+                    <div class="border-gray-800 border-b w-full">
+                        <div class="w-full text-white font-extrabold p-4 text-[22px]">
+                            Home
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>

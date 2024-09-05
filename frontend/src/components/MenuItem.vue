@@ -1,4 +1,4 @@
-<script>
+<script setup>
     import { toRefs } from 'vue';
     import Home from 'vue-material-design-icons/Home.vue'
     import Pound from 'vue-material-design-icons/Pound.vue'
@@ -19,11 +19,16 @@
     if (iconString.value === 'BellOutline') icon = BellOutline
     if (iconString.value === 'AccountOutline') icon = AccountOutline
     if (iconString.value === 'EmailOutline') icon = EmailOutline
-
-
-    
+   
 </script>
 
 <template>
-    
+    <div class="w-full lg:inline-block hover:bg-gray-200 p-2 px-4 lg:pr-6 rounded-full cursor-pointer transition duration-200 ease-in-out">
+        <div class="flex items-center">
+            <component :is="icon" fillColor="#FFFFFF" :size="30" />
+            <span class="lg:block hidden font-extrabold text-white pl-4 mt-0.5 text-[23px]">
+                {{ iconString }}
+            </span>
+        </div>
+    </div>
 </template>

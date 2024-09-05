@@ -23,7 +23,7 @@ import MenuItem from '@/components/MenuItem.vue'
                     <img src="../assets/xlogo-removebg-preview.png" class="w-[50px]" alt="">
                 </div>
 
-                <MenuItem iconString="home" />
+                <MenuItem iconString="Home" />
             </div>
         </div>
     </div>

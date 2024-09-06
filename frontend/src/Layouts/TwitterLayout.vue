@@ -133,13 +133,51 @@ let randImg2 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}
                             <DotsHorizontal fillColor="#FFFFFF" />
                         </div>
                     </div>
+                    <div class="hover:bg-neutral-950 cursor-pointer transition duration-200 ease-in-out">
+                        <div class="flex justify-between p-3 ">
+                            <div>
+                                <div class="text-gray-400 text-[13px]">Trending in East Africa</div>
+                                <div class="w-full text-white font-extrabold text-[15px]">
+                                    THE GOAT
+                                </div>
+                                <div class="text-gray-400 text-[14px]">238k posts</div>
+                            </div>
+                            <DotsHorizontal fillColor="#FFFFFF" />
+                        </div>
+                    </div>  
+                    <!-- <div class="hover:bg-neutral-950 cursor-pointer transition duration-200 ease-in-out">
+                        <div class="flex justify-between p-3 ">
+                            <div>
+                                <div class="text-gray-400 text-[13px]">Trending in Uganda</div>
+                                <div class="w-full text-white font-extrabold text-[15px]">
+                                    Namboole
+                                </div>
+                                <div class="text-gray-400 text-[14px]">2k posts</div>
+                            </div>
+                            <DotsHorizontal fillColor="#FFFFFF" />
+                        </div>
+                    </div>   -->
+                    <!-- <div class="hover:bg-neutral-950 cursor-pointer transition duration-200 ease-in-out">
+                        <div class="flex justify-between p-3 ">
+                            <div>
+                                <div class="text-gray-400 text-[13px]">Trending in Kampala</div>
+                                <div class="w-full text-white font-extrabold text-[15px]">
+                                    Gashumba
+                                </div>
+                                <div class="text-gray-400 text-[14px]">13k posts</div>
+                            </div>
+                            <DotsHorizontal fillColor="#FFFFFF" />
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </div>
     </div>
 
     <div id="OverlaySection" class="fixed top-0 left-0 w-full h-screen bg-black md:bg-gray-400 md:bg-opacity-30 md:p-3">
-        
+        <div class="md:max-w-2xl md:mx-auto md:mt-10 md:rounded-xl bg-black">
+            
+        </div>
     </div>
 </template>
 

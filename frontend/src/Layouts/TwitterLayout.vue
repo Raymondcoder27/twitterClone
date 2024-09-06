@@ -21,7 +21,27 @@ let textarea = ref(null)
 let createTweet = ref(false)
 let tweet = ref('')
 
-const textareaInput()
+let file = ref('')
+let showUpload = ref('')
+let uploadType = ref('')
+
+const getFile = () => {
+    file.value = e.target.files[0]
+    showUpload.value = URL.createObjectURL(e.target.files[0])
+    uploadType.value = file.value.name.split('.').pop();
+}
+
+const closeMessageBox = () => {
+    createTweet.value = false
+    tweet.value = ''
+    showUpload.value = ''
+    uploadType.value = ''
+}
+
+const textareaInput = (e) => {
+    textarea.value.style.height = "auto"
+    textarea.value.style.height = `${e.target.scrollHeight}px`;
+}
 
 </script>
 
@@ -212,6 +232,7 @@ const textareaInput()
 
                     <div>
                         <textarea 
+                        :oninput="textareaInput"
                         placeholder="What's happening"
                         v-model="tweet"
                         ref="textarea"
@@ -226,7 +247,13 @@ const textareaInput()
                     text-white
                     text-[19px]
                     font-extrabold
-                    min-h-[120px]"></textarea>
+                    min-h-[120px]">
+                </textarea>
+                    </div>
+
+                    <div class="w-full">
+                        <video controls v-if="uploadType === 'mp4'" :src="showUpload" class="rounded-xl overflow-auto"></video>
+                        <img v-else :src="showUpload" alt="" class="rounded-xl min-w-full">
                     </div>
                 </div>
             </div>

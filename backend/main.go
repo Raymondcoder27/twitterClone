@@ -7,6 +7,7 @@ import (
 )
 
 func init() {
+	initializers.LoadEnvVariables()
 	initializers.ConnectToDB()
 	initializers.MigrateDB()
 }
@@ -16,4 +17,5 @@ func main() {
 	r.GET("/tweets", controllers.GetTweets)
 	r.POST("/createTweet", controllers.CreateTweet)
 	r.DELETE("/tweet/:id", controllers.DeleteTweet)
+	r.Run(":8089")
 }

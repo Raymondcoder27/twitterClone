@@ -74,6 +74,15 @@ import MenuItem from '@/components/MenuItem.vue'
             <div class="lg:block hidden lg:w-4/12 h-screen border-l border-gray-800 pl-4">
                 <div class="w-full p-1 mt-2 px-4 lg:flex items-center rounded-full hidden bg-[#212327]">
                     <Magnify fillColor="#5E5C5C" :size="25" />
+                    <input type="text" placeholder="Search Twitter" 
+                    class="appearance-none w-full border-0 py-2 text-gray-100 bg-[#212327] placeholder-gray-500 leading-tight focus:ring-0
+                    ">
+                </div>
+
+                <div class="w-full mt-4 rounded-lg lg:block hidden bg-[#212327]">
+                    <div class="w-full p-4 text-white font-extrabold pb-6 text-[20px]">
+                        What's happening
+                    </div>
                 </div>
             </div>
         </div>

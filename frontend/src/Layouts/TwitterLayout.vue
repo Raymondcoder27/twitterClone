@@ -17,8 +17,11 @@ import MenuItem from '@/components/MenuItem.vue'
 let randImg1 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}/100`)
 let randImg2 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}/100`)
 
+let textarea = ref(null)
 let createTweet = ref(false)
 let tweet = ref('')
+
+const textareaInput()
 
 </script>
 
@@ -58,7 +61,7 @@ let tweet = ref('')
                         </div>
                         <div class="flex">
                             <div class="flex items-center justify-center hover:bg-opacity-30 cursor-pointer hover:bg-gray-500 p-4 text-white font-extrabold text-[17px] w-full h-[60px]">
-                                <div class="inline-block text-center border-b-2 h-[68px] border-b-[#1C9CEF]">
+                                <div class="inline-block text-center border-b-4 h-[60px] rounded-sm border-b-[#1C9CEF]">
                                     <div class="my-auto mt-4">For you</div>
                                 </div>
                             </div>
@@ -179,7 +182,7 @@ let tweet = ref('')
         </div>
     </div>
 
-    <!-- <div id="OverlaySection" class="fixed top-0 left-0 w-full h-screen bg-black md:bg-slate-500 md:bg-opacity-30 md:p-3">
+     <div id="OverlaySection" class="fixed top-0 left-0 w-full h-screen bg-black md:bg-slate-500 md:bg-opacity-30 md:p-3">
         <div class="md:max-w-2xl md:mx-auto md:mt-10 md:rounded-xl bg-black">
             <div class="flex justify-between items-center md:inline-block p-2 m-2 rounded-full cursor-pointer">
                 <div class="hover:bg-gray-800 inline-block cursor-pointer rounded-full p-2">
@@ -228,7 +231,8 @@ let tweet = ref('')
                 </div>
             </div>
         </div>
-    </div> -->
+    </div> 
+
 </template>
 
 <style>

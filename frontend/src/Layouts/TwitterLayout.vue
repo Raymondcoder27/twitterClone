@@ -174,9 +174,20 @@ let randImg2 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}
         </div>
     </div>
 
-    <div id="OverlaySection" class="fixed top-0 left-0 w-full h-screen bg-black md:bg-gray-400 md:bg-opacity-30 md:p-3">
+    <div id="OverlaySection" class="fixed top-0 left-0 w-full h-screen bg-black md:bg-slate-500 md:bg-opacity-30 md:p-3">
         <div class="md:max-w-2xl md:mx-auto md:mt-10 md:rounded-xl bg-black">
-            
+            <div class="flex items-center jusitify-center md:inline-block p-2 m-2 rounded-full cursor-pointer">
+                <div class="hover:bg-gray-800 inline-block cursor-pointer rounded-full p-2">
+                    <Close fillColor="#FFFFFF" :size="28" class="md:block hidden"/>
+                    <ArrowLeft fillColor="#FFFFFF" :size="28" class="md:hidden block"/>
+                </div>
+
+                <button
+                :class="tweet ? 'bg-[#1C9CEF] text-white' : 'bg-[#124D77] text-gray-400'"
+                 class="md:hidden font-extrabold px-4 rounded-full cursor-pointer text-[16px] p-1.5">
+                    Post
+                </button>
+            </div>
         </div>
     </div>
 </template>

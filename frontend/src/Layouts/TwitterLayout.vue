@@ -63,7 +63,8 @@ const textareaInput = (e) => {
                 <MenuItem iconString="More" />
 
 
-                <button class="lg:w-full mt-8 ml-2 text-white font-extrabold p-3 px-3 rounded-full cursor-pointer bg-[#1C9CEF]">
+                <button
+                @click="createTweet = true" class="lg:w-full mt-8 ml-2 text-white font-extrabold p-3 px-3 rounded-full cursor-pointer bg-[#1C9CEF]">
                     <span class="lg:block hidden">
                         Post
                     </span>
@@ -203,11 +204,11 @@ const textareaInput = (e) => {
         </div>
     </div>
 
-     <div id="OverlaySection" class="fixed top-0 left-0 w-full h-screen bg-black md:bg-slate-500 md:bg-opacity-30 md:p-3">
+     <div id="OverlaySection" v-if="createTweet" class="fixed top-0 left-0 w-full h-screen bg-black md:bg-slate-500 md:bg-opacity-30 md:p-3">
         <div class="md:max-w-2xl md:mx-auto md:mt-10 md:rounded-xl bg-black">
             <div class="flex justify-between items-center md:inline-block p-2 m-2 rounded-full cursor-pointer">
-                <div class="hover:bg-gray-800 inline-block cursor-pointer rounded-full p-2">
-                    <Close fillColor="#FFFFFF" :size="28" class="md:block hidden"/>
+                <div class="hover:bg-zinc-900 inline-block cursor-pointer rounded-full p-2">
+                    <Close @click="closeMessageBox()" fillColor="#FFFFFF" :size="23" class="md:block hidden"/>
                     <ArrowLeft fillColor="#FFFFFF" :size="28" class="md:hidden block"/>
                 </div>
 
@@ -256,8 +257,8 @@ const textareaInput = (e) => {
                         <video controls v-if="uploadType === 'mp4'" :src="showUpload" class="rounded-xl overflow-auto"></video>
                         <img v-else :src="showUpload" alt="" class="rounded-xl min-w-full">
                     </div>
-                    <div class="flex py-2 items-center font-extrabold text-[#1C9CEF]">
-                        <Earth fillColor="#1C9CEF" :size="20" class="pr-2"/> Everyone can reply
+                    <div class="flex py-2 text-sm items-center font-extrabold text-[#1C9CEF]">
+                        <Earth fillColor="#1C9CEF" :size="18" class="pr-2"/> Everyone can reply
                     </div>
                     <div class="border-b border-gray-700"></div>
                     <div class="flex items-center justify-between py-2">

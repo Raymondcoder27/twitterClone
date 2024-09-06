@@ -5,7 +5,7 @@
     import MessageOutline from 'vue-material-design-icons/MessageOutline.vue'
     import Sync  from 'vue-material-design-icons/Sync.vue'
     import DotsHorizontal from 'vue-material-design-icons/DotsHorizontal.vue'
-    import BookMark fom 'vue-material-design-icons/BookMark'
+    import BookMarkOutline from 'vue-material-design-icons/BookmarkOutline.vue'
     import TrashCanOutline from 'vue-material-design-icons/TrashCanOutline.vue'
 
     const props = defineProps({
@@ -64,6 +64,10 @@
             <div class="flex">
                 <ChartBar fillColor="#5e5c5c" :size="18" />
                 <span class="text-xs text-[#5e5c5c] font-extrabold ml-3">{{ tweet.analytics }}</span>
+            </div>
+            <div class="flex">
+                <BookMarkOutline fillColor="#5e5c5c" :size="18" />
+                <span class="text-xs text-[#5e5c5c] font-extrabold ml-3"></span>
             </div>
         </div>
     </div>

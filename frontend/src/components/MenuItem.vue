@@ -29,7 +29,7 @@ import DotsHorizontal from 'vue-material-design-icons/DotsHorizontal.vue';
     <div class="w-full lg:inline-block hover:bg-zinc-900 p-2 px-4 lg:pr-6 rounded-full cursor-pointer transition duration-200 ease-in-out">
         <div class="flex items-center">
             <component :is="icon" fillColor="#FFFFFF" :size="30" />
-            <span class="lg:block hidden text-white pl-4 mt-0.5 text-[23px]">
+            <span class="lg:block hidden text-white pl-4 mt-0.5 text-[21px]">
                 {{ iconString }}
             </span>
         </div>

@@ -12,7 +12,7 @@ import Tweet from './components/Tweet.vue';
      <div class="flex">
       <Tweet :tweet="{
         name: 'Ronald Mpagi',
-        handle: '@RonaldMpagi',
+        handle: '@Mpagi',
         image: 'https://randomuser.me/api/portraits/men/40.jpg',
         tweet: 'We went rock climbing this weekend. Here is the video, climbing is way more fun than cycling.',
         file: '/videos/Sportsman.mp4',

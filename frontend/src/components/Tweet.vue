@@ -6,6 +6,12 @@
     import Sync  from 'vue-material-design-icons/Sync.vue'
     import DotsHorizontal from 'vue-material-design-icons/DotsHorizontal.vue'
     import TrashCanOutline from 'vue-material-design-icons/TrashCanOutline.vue'
+
+    const props = defineProps({
+        tweet: Object
+    })
+
+    let openOptions = ref(false)
 </script>
 
 <template>

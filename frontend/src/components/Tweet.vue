@@ -15,5 +15,7 @@
 </script>
 
 <template>
-    
+    <div class="min-w-[60px]">
+        <img :src="tweet.image" width="50" alt="" class="rounded-full m-2 mt-3">
+    </div>
 </template>

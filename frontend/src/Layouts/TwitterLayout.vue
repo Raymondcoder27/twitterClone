@@ -89,12 +89,25 @@ let randImg2 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}
                     <div class="hover:bg-gray-800 cursor-pointer transition duration-200 ease-in-out h-[80px]">
                         <div class="flex justify-between py-3 p-3 h-[80px]">
                             <div>
-                                <div class="text-gray-400 text-[14px]">What's Happening</div>
+                                <div class="text-gray-400 text-[14px]">FootBall</div>
                                 <div class="w-full text-white font-extrabold mb-6 text-[17px]">
                                     Ronald at 900
                                 </div>
                             </div>
                             <img class="rounded-xl" :src="randImg2" alt="">
+                        </div>
+                    </div>
+                    <div class="hover:bg-gray-800 cursor-pointer transition duration-200 ease-in-out">
+                        <div class="flex justify-between p-3 ">
+                            <div>
+                                <div class="text-gray-400 text-[14px]">Trending in Uganda</div>
+                                <div class="w-full text-white font-extrabold text-[17px]">
+                                    Tertiary Institution curriculum overhaul
+                                </div>
+                                <div class="text-gray-400 text-[14px]">3,000 posts</div>
+                            </div>
+                            <DotsHorizontal fillColor="#FFFFFF" />
+                            <!-- <img class="rounded-xl" :src="randImg2" alt=""> -->
                         </div>
                     </div>
                 </div>

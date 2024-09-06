@@ -65,7 +65,16 @@ import MenuItem from '@/components/MenuItem.vue'
             </div>
 
             <div class="absolute top-0 z-0 h-full overflow-auto scrollbar-hide">
-                
+                <div class="mt-[126px]"></div>
+                <slot />
+                <div class="pb-4"></div>
+            </div>
+
+            <!-- <div class="lg:block hidden lg:w-4"> -->
+            <div class="lg:block hidden lg:w-4/12 h-screen border-l border-gray-800 pl-4">
+                <div class="w-full p-1 mt-2 px-4 lg:flex items-center rounded-full hidden bg-[#212327   ]">
+                    <Magnify fillColor="#5E5C5C" :size="25" />
+                </div>
             </div>
         </div>
     </div>

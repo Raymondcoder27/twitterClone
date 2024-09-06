@@ -83,6 +83,14 @@ import MenuItem from '@/components/MenuItem.vue'
                     <div class="w-full p-4 text-white font-extrabold pb-6 text-[20px]">
                         What's happening
                     </div>
+
+                    <div class="hover:bg-gray-800 cursor-pointer transition duration-200 ease-in-out h-[80px]">
+                        <div class="flex justify-between py-3 p-3 h-[80px]">
+                            <div>
+                                <div class="text-gray-400 text-[14px]">What's Happening</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -24,6 +24,15 @@
                 <div>{{tweet.name}}</div>
                 <span class="font-[300] text-[15px] pl-2 text-gray-500">{{ tweet.handle }}</span>
             </div>
+            <div class="hover:bg-gray-800 rounded-full cursor-pointer relative">
+                <button type="button" class="block p-2">
+                    <DotsHorizontal @click="openOptions = !openOptions" />
+                </button>
+            </div>
+        </div>
+
+        <div class="pb-3 text-sm">
+            {{tweet.tweet}}
         </div>
     </div>
 </template>

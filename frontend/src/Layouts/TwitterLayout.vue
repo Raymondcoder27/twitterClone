@@ -13,6 +13,8 @@ import FileGiftBox from 'vue-material-design-icons/FileGifBox.vue'
 import Emoticon from 'vue-material-design-icons/Emoticon.vue'
 import ArrowLeft from 'vue-material-design-icons/ArrowLeft.vue'
 import MenuItem from '@/components/MenuItem.vue'
+
+let randImg2 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}/100`)
 </script>
 
 <template>
@@ -88,7 +90,11 @@ import MenuItem from '@/components/MenuItem.vue'
                         <div class="flex justify-between py-3 p-3 h-[80px]">
                             <div>
                                 <div class="text-gray-400 text-[14px]">What's Happening</div>
+                                <div class="w-full text-white font-extrabold mb-6 text-[17px]">
+                                    Ronald at 900
+                                </div>
                             </div>
+                            <img class="rounded-xl" :src="randImg2" alt="">
                         </div>
                     </div>
                 </div>

@@ -15,6 +15,10 @@ import ArrowLeft from 'vue-material-design-icons/ArrowLeft.vue'
 import MenuItem from '@/components/MenuItem.vue'
 
 let randImg2 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}/100`)
+
+let createTweet = ref(false)
+let tweet = ref('')
+
 </script>
 
 <template>
@@ -176,7 +180,7 @@ let randImg2 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}
 
     <div id="OverlaySection" class="fixed top-0 left-0 w-full h-screen bg-black md:bg-slate-500 md:bg-opacity-30 md:p-3">
         <div class="md:max-w-2xl md:mx-auto md:mt-10 md:rounded-xl bg-black">
-            <div class="flex items-center jusitify-center md:inline-block p-2 m-2 rounded-full cursor-pointer">
+            <div class="flex justify-between items-center md:inline-block p-2 m-2 rounded-full cursor-pointer">
                 <div class="hover:bg-gray-800 inline-block cursor-pointer rounded-full p-2">
                     <Close fillColor="#FFFFFF" :size="28" class="md:block hidden"/>
                     <ArrowLeft fillColor="#FFFFFF" :size="28" class="md:hidden block"/>

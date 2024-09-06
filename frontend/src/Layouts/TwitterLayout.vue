@@ -205,12 +205,15 @@ const textareaInput = (e) => {
     </div>
 
      <div id="OverlaySection" v-if="createTweet" class="fixed top-0 left-0 w-full h-screen bg-black md:bg-slate-500 md:bg-opacity-30 md:p-3">
-        <div class="md:max-w-2xl md:mx-auto md:mt-10 md:rounded-xl bg-black">
-            <div class="flex justify-between items-center md:inline-block p-2 m-2 rounded-full cursor-pointer">
+        <div class="md:max-w-2xl md:mx-auto md:mt-5 md:rounded-xl bg-black">
+            <div class="flex justify-between items-center md:inline-block lg:flex p-2 m-2 rounded-full cursor-pointer">
                 <div class="hover:bg-zinc-900 inline-block cursor-pointer rounded-full p-2">
-                    <Close @click="closeMessageBox()" fillColor="#FFFFFF" :size="23" class="md:block hidden"/>
+                        <Close @click="closeMessageBox()" fillColor="#FFFFFF" :size="23" class="md:block hidden"/>
                     <ArrowLeft @click="closeMessageBox()" fillColor="#FFFFFF" :size="28" class="md:hidden block"/>
                 </div>
+
+                <div class="flex">
+                    <button class="hover:bg-slate-800 flex p-3 rounded-full px-3 mr-3 text-sm font-semibold text-[#1C9CEF]">Drafts</button>
 
                 <button
                 :disabled="!tweet"
@@ -218,6 +221,8 @@ const textareaInput = (e) => {
                  class="md:hidden font-extrabold px-4 rounded-full cursor-pointer text-[16px] p-1.5">
                     Post
                 </button>
+                </div>
+
             </div>
 
             <div class="w-full flex">

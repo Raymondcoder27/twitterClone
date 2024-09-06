@@ -15,7 +15,17 @@ func GetTweets(c *gin.Context) {
 }
 
 func CreateTweet(c *gin.Context) {
-	var tweet models.Tweet
+	var body struct {
+		Name      string
+		Handle    string
+		Tweet     string
+		Comments  string
+		Retweets  string
+		Likes     string
+		Analytics string
+	}
+	// var tweet models.Tweet
+	tweet := models.Tweet{body.name}
 
 	if err := initializers.DB.Create(&tweet).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"message": "error creating tweet."})

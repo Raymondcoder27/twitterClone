@@ -16,7 +16,14 @@
 
 <template>
     <div class="min-w-[60px]">
-        {{ tweet }}
         <img :src="tweet.image" width="50" alt="" class="rounded-full m-2 mt-3">
+    </div>
+    <div class="p-2 w-full">
+        <div class="font-extrabold flex items-center justify-between mt-0.5 mb-1.5">
+            <div class="flex items-center">
+                <div>{{tweet.name}}</div>
+                <span class="font-[300] text-[15px] pl-2 text-gray-500">{{ tweet.handle }}</span>
+            </div>
+        </div>
     </div>
 </template>

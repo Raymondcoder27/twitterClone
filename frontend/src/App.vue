@@ -9,6 +9,7 @@ import Tweet from './components/Tweet.vue';
   <TwitterLayout>
     <div class="text-white">
       <div class="border-b border-b-gray-800 mt-2"></div>
+     <div class="flex">
       <Tweet :tweet="{
         name: 'Ronald Mpagi',
         handle: '@RonaldMpagi',
@@ -21,6 +22,7 @@ import Tweet from './components/Tweet.vue';
         likes: '87',
         analytics: '81',
       }" />
+     </div>
     </div>
   </TwitterLayout>
 

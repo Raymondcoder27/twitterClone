@@ -8,17 +8,17 @@ import (
 
 type Tweet struct {
 	gorm.Model
-	id        string `gorm:"primaryKey"`
-	name      string
-	handle    string
-	image     string
-	tweet     string
-	file      string
-	video     string
-	comments  string
-	retweets  string
-	likes     string
-	analytics string
-	createdAt time.Time
-	deletedAt gorm.DeletedAt
+	Id        string `gorm:"primaryKey"`
+	Name      string
+	Handle    string
+	Image     string
+	Tweet     string
+	File      string
+	Video     string
+	Comments  string
+	Retweets  string
+	Likes     string
+	Analytics string
+	CreatedAt time.Time
+	DeletedAt gorm.DeletedAt
 }

@@ -209,7 +209,7 @@ const textareaInput = (e) => {
             <div class="flex justify-between items-center md:inline-block p-2 m-2 rounded-full cursor-pointer">
                 <div class="hover:bg-zinc-900 inline-block cursor-pointer rounded-full p-2">
                     <Close @click="closeMessageBox()" fillColor="#FFFFFF" :size="23" class="md:block hidden"/>
-                    <ArrowLeft fillColor="#FFFFFF" :size="28" class="md:hidden block"/>
+                    <ArrowLeft @click="closeMessageBox()" fillColor="#FFFFFF" :size="28" class="md:hidden block"/>
                 </div>
 
                 <button

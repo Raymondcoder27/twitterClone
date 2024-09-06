@@ -82,7 +82,7 @@ let tweet = ref('')
                 <div class="w-full p-1 mt-2 px-4 lg:flex items-center rounded-full hidden bg-[#212327]">
                     <Magnify fillColor="#5E5C5C" :size="25" />
                     <input type="text" placeholder="Search" 
-                    class="appearance-none w-full border-0 py-2 text-gray-100 bg-[#212327] placeholder-gray-500 leading-tight focus:ring-0
+                    class="appearance-none w-full border-0 py-2 text-gray-100 bg-[#212327] placeholder-gray-500 leading-tight focus:outline-none
                     ">
                 </div>
 
@@ -179,7 +179,7 @@ let tweet = ref('')
         </div>
     </div>
 
-    <div id="OverlaySection" class="fixed top-0 left-0 w-full h-screen bg-black md:bg-slate-500 md:bg-opacity-30 md:p-3">
+    <!-- <div id="OverlaySection" class="fixed top-0 left-0 w-full h-screen bg-black md:bg-slate-500 md:bg-opacity-30 md:p-3">
         <div class="md:max-w-2xl md:mx-auto md:mt-10 md:rounded-xl bg-black">
             <div class="flex justify-between items-center md:inline-block p-2 m-2 rounded-full cursor-pointer">
                 <div class="hover:bg-gray-800 inline-block cursor-pointer rounded-full p-2">
@@ -213,12 +213,22 @@ let tweet = ref('')
                         v-model="tweet"
                         ref="textarea"
                         cols="30"
-                        rows="10"></textarea>
+                        rows="10"
+                        class="
+                        w-full
+                    bg-black
+                    border-0
+                    mt-0
+                    focus:outline-none
+                    text-white
+                    text-[19px]
+                    font-extrabold
+                    min-h-[120px]"></textarea>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </template>
 
 <style>

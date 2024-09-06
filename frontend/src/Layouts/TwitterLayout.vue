@@ -14,6 +14,7 @@ import Emoticon from 'vue-material-design-icons/Emoticon.vue'
 import ArrowLeft from 'vue-material-design-icons/ArrowLeft.vue'
 import MenuItem from '@/components/MenuItem.vue'
 
+let randImg1 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}/100`)
 let randImg2 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}/100`)
 
 let createTweet = ref(false)
@@ -187,10 +188,34 @@ let tweet = ref('')
                 </div>
 
                 <button
+                :disabled="!tweet"
                 :class="tweet ? 'bg-[#1C9CEF] text-white' : 'bg-[#124D77] text-gray-400'"
                  class="md:hidden font-extrabold px-4 rounded-full cursor-pointer text-[16px] p-1.5">
                     Post
                 </button>
+            </div>
+
+            <div class="w-full flex">
+                <div class="mr-2 ml-3.5">
+                    <img :src="randImg1" alt="" class="rounded-full" width="55">
+                </div>
+                <div class="w-[calc(100%-100px)]">
+                    <div class="inline-block">
+                        <div class="flex items-center border border-gray-700 rounded-full">
+                            <span class="font-extrabold p-0.5 pl-3.5 text-[#1C9CEF]">Everyone</span>
+                            <ChevronDown class="pr-2" :size="25" fillColor="#1C9CEF" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <textarea 
+                        placeholder="What's happening"
+                        v-model="tweet"
+                        ref="textarea"
+                        cols="30"
+                        rows="10"></textarea>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

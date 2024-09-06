@@ -240,6 +240,7 @@ const textareaInput = (e) => {
                         cols="30"
                         rows="10"
                         class="
+                        mt-[10px]
                         w-full
                     bg-black
                     border-0
@@ -277,6 +278,12 @@ const textareaInput = (e) => {
                                     <Calendar :size="25" fillColor="#1C9CEF"/>
                             </div>
                         </div>
+                        <button
+                :disabled="!tweet"
+                :class="tweet ? 'bg-[#1C9CEF] text-white' : 'bg-[#124D77] text-gray-400'"
+                 class="hidden md:block font-extrabold px-4 rounded-full cursor-pointer text-[16px] p-1.5">
+                    Post
+                </button>
                     </div>
                 </div>
             </div>

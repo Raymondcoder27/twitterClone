@@ -223,17 +223,17 @@ const textareaInput = (e) => {
                     <img :src="randImg1" alt="" class="rounded-full" width="55">
                 </div>
                 <div class="w-[calc(100%-100px)]">
-                    <div class="inline-block">
+                    <!-- <div class="inline-block">
                         <div class="flex items-center border border-gray-700 rounded-full">
                             <span class="font-extrabold p-0.5 pl-3.5 text-[#1C9CEF]">Everyone</span>
                             <ChevronDown class="pr-2" :size="25" fillColor="#1C9CEF" />
                         </div>
-                    </div>
+                    </div> -->
 
                     <div>
                         <textarea 
                         :oninput="textareaInput"
-                        placeholder="What's happening"
+                        placeholder="What is happening?!"
                         v-model="tweet"
                         ref="textarea"
                         cols="30"
@@ -244,9 +244,8 @@ const textareaInput = (e) => {
                     border-0
                     mt-0
                     focus:outline-none
-                    text-white
+                    text-gray-300
                     text-[19px]
-                    font-extrabold
                     min-h-[120px]">
                 </textarea>
                     </div>
@@ -254,6 +253,23 @@ const textareaInput = (e) => {
                     <div class="w-full">
                         <video controls v-if="uploadType === 'mp4'" :src="showUpload" class="rounded-xl overflow-auto"></video>
                         <img v-else :src="showUpload" alt="" class="rounded-xl min-w-full">
+                    </div>
+                    <div class="flex py-2 items-center font-extrabold text-[#1C9CEF]">
+                        <Earth fillColor="#1C9CEF" :size="20" class="pr-2"/> Everyone can reply
+                    </div>
+                    <div class="border-b border-gray-700"></div>
+                    <div class="flex items-center justify-between py-2">
+                        <div class="flex items-center">
+                            <div class="inline-block rounded-full cursor-pointer p-2 hover:bg-gray-800">
+                                <label for="fileUpload" class="cursor-pointer">
+                                    <ImageOutline :size="25" fillColor="#1C9CEF"/>
+                                </label>
+                                <input type="file" id="fileUpload" class="hidden" @change="getFile">
+                            </div>
+                            <div class="inline-block rounded-full cursor-pointer p-2 hover:bg-gray-800">
+                                    <FileGifBox :size="25" fillColor="#1C9CEF"/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

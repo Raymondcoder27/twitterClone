@@ -34,5 +34,37 @@
         <div class="pb-3 text-sm">
             {{tweet.tweet}}
         </div>
+
+        <div
+        v-if="tweet.file">
+            <div
+            v-if="!tweet.is_video" class="rounded-xl">
+                <img :src="tweet.file" alt="" class="mt-2 object-fill rounded-xl-w-full">
+            </div>
+            <div
+            v-else>
+                <video :src="tweet.file" class="rounded-xl" controls></video>
+            </div>
+        </div>
+
+
+        <div class="flex items-center justify-between mt-4 w-4/5">
+            <div class="flex">
+                <MessageOutline text-[#5e5c5c] :size="18" />
+                <span class="text-xs text-[#5e5c5c] font-extrabold ml-3">{{ tweet.comments }}</span>
+            </div>
+            <div class="flex">
+                <MessageOutline text-[#5e5c5c] :size="18" />
+                <span class="text-xs text-[#5e5c5c] font-extrabold ml-3">{{ tweet.comments }}</span>
+            </div>
+            <div class="flex">
+                <MessageOutline text-[#5e5c5c] :size="18" />
+                <span class="text-xs text-[#5e5c5c] font-extrabold ml-3">{{ tweet.comments }}</span>
+            </div>
+            <div class="flex">
+                <MessageOutline text-[#5e5c5c] :size="18" />
+                <span class="text-xs text-[#5e5c5c] font-extrabold ml-3">{{ tweet.comments }}</span>
+            </div>
+        </div>
     </div>
 </template>

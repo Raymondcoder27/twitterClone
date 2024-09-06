@@ -54,7 +54,7 @@ const textareaInput = (e) => {
                     <img src="../assets/xlogo-removebg-preview.png" class="w-[50px]" alt="">
                 </div>
 
-                <MenuItem iconString="Home" />
+                <MenuItem class="font-semibold" iconString="Home"/>
                 <MenuItem iconString="Explore" />
                 <MenuItem iconString="Notifications" />
                 <MenuItem iconString="Messages" />
@@ -95,7 +95,7 @@ const textareaInput = (e) => {
                     </div>
                 </div>
 
-                
+
                 <div class="absolute top-0 z-0 h-full overflow-auto scrollbar-hide">
                 <div class="mt-[126px]"></div>
                 <slot />

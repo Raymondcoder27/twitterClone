@@ -53,7 +53,7 @@ let randImg2 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}
                         </div>
                         <div class="flex">
                             <div class="flex items-center justify-center hover:bg-gray-500 p-4 text-white font-extrabold text-[17px] w-full h-[60px]">
-                                <div class="inline-block text-center border-b-4 h-[68px] border-b-[#1C9CEF]">
+                                <div class="inline-block text-center border-b-1 h-[68px] border-b-[#1C9CEF]">
                                     <div class="my-auto mt-4">For you</div>
                                 </div>
                             </div>
@@ -73,25 +73,25 @@ let randImg2 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}
             </div>
 
             <!-- <div class="lg:block hidden lg:w-4"> -->
-            <div class="lg:block hidden lg:w-4/12 h-screen border-l border-gray-800 pl-4">
+            <div class="lg:block hidden lg:w-4/12 h-screen border-l border-gray-800 pl-4 pr-6">
                 <div class="w-full p-1 mt-2 px-4 lg:flex items-center rounded-full hidden bg-[#212327]">
                     <Magnify fillColor="#5E5C5C" :size="25" />
-                    <input type="text" placeholder="Search Twitter" 
+                    <input type="text" placeholder="Search" 
                     class="appearance-none w-full border-0 py-2 text-gray-100 bg-[#212327] placeholder-gray-500 leading-tight focus:ring-0
                     ">
                 </div>
 
-                <div class="w-full mt-4 rounded-lg lg:block hidden bg-[#212327]">
+                <div class="w-full mt-4 rounded-lg lg:block hidden border border-gray-800">
                     <div class="w-full p-4 text-white font-extrabold pb-6 text-[20px]">
-                        What's happening
+                        Trends for you
                     </div>
 
                     <div class="hover:bg-gray-800 cursor-pointer transition duration-200 ease-in-out h-[80px]">
                         <div class="flex justify-between py-3 p-3 h-[80px]">
                             <div>
-                                <div class="text-gray-400 text-[14px]">FootBall</div>
+                                <div class="text-gray-400 text-[14px]">Trending in Uganda</div>
                                 <div class="w-full text-white font-extrabold mb-6 text-[17px]">
-                                    Ronald at 900
+                                    Christiano Ronaldo
                                 </div>
                             </div>
                             <img class="rounded-xl" :src="randImg2" alt="">
@@ -107,7 +107,30 @@ let randImg2 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}
                                 <div class="text-gray-400 text-[14px]">3,000 posts</div>
                             </div>
                             <DotsHorizontal fillColor="#FFFFFF" />
-                            <!-- <img class="rounded-xl" :src="randImg2" alt=""> -->
+                        </div>
+                    </div>
+                    <div class="hover:bg-gray-800 cursor-pointer transition duration-200 ease-in-out">
+                        <div class="flex justify-between p-3 ">
+                            <div>
+                                <div class="text-gray-400 text-[14px]">Trending in Uganda</div>
+                                <div class="w-full text-white font-extrabold text-[17px]">
+                                    Makerere
+                                </div>
+                                <div class="text-gray-400 text-[14px]">7k posts</div>
+                            </div>
+                            <DotsHorizontal fillColor="#FFFFFF" />
+                        </div>
+                    </div>
+                    <div class="hover:bg-gray-800 cursor-pointer transition duration-200 ease-in-out">
+                        <div class="flex justify-between p-3 ">
+                            <div>
+                                <div class="text-gray-400 text-[14px]">Manchester United . Trending</div>
+                                <div class="w-full text-white font-extrabold text-[17px]">
+                                    Ten Hag
+                                </div>
+                                <div class="text-gray-400 text-[14px]">23k posts</div>
+                            </div>
+                            <DotsHorizontal fillColor="#FFFFFF" />
                         </div>
                     </div>
                 </div>

@@ -52,13 +52,13 @@ let randImg2 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}
                             Home
                         </div>
                         <div class="flex">
-                            <div class="flex items-center justify-center hover:bg-gray-500 p-4 text-white font-extrabold text-[17px] w-full h-[60px]">
+                            <div class="flex items-center justify-center hover:bg-opacity-30 cursor-pointer hover:bg-gray-500 p-4 text-white font-extrabold text-[17px] w-full h-[60px]">
                                 <div class="inline-block text-center border-b-2 h-[68px] border-b-[#1C9CEF]">
                                     <div class="my-auto mt-4">For you</div>
                                 </div>
                             </div>
 
-                            <div class=" hover:bg-gray-500 p-4 text-gray-500 font-extrabold text-[17px] w-full h-[60px]">
+                            <div class=" hover:bg-gray-500 hover:bg-opacity-30 cursor-pointer p-4 text-gray-500 font-extrabold text-[17px] w-full h-[60px]">
                                 <div class="text-center">Following</div>
                             </div>
                         </div>
@@ -136,6 +136,10 @@ let randImg2 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="OverlaySection" class="fixed top-0 left-0 w-full h-screen bg-black md:bg-gray-400 md:bg-opacity-30 md:p-3">
+        
     </div>
 </template>
 

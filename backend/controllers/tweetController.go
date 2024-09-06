@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"errors"
+	"fmt"
 	"net/http"
 
 	"example.com/twitterClone/initializers"
@@ -32,17 +32,18 @@ func CreateTweet(c *gin.Context) {
 	}
 }
 
-func DeleteTweet(c *gin.Context) error {
+func DeleteTweet(c *gin.Context) {
 	id := c.Param("id")
 	var tweet models.Tweet
 
 	if err := initializers.DB.Where("id=?", id).First(&tweet).Error; err != nil {
-		return errors.New("tweet not found")
+		fmt.Println("tweet not found")
+		return
 	}
 
 	if err := initializers.DB.Delete(&tweet).Error; err != nil {
-		return err
+		fmt.Printf("tweet not found %v", err)
+		return
 	}
 
-	return nil
 }

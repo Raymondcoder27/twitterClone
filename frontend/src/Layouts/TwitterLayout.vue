@@ -9,7 +9,7 @@ import Close from 'vue-material-design-icons/Close.vue'
 import ChevronDown from 'vue-material-design-icons/ChevronDown.vue'
 import Earth from 'vue-material-design-icons/Earth.vue'
 import ImageOutline from 'vue-material-design-icons/ImageOutline.vue'
-import FileGiftBox from 'vue-material-design-icons/FileGifBox.vue'
+import FileGifBox from 'vue-material-design-icons/FileGifBox.vue'
 import Emoticon from 'vue-material-design-icons/Emoticon.vue'
 import ArrowLeft from 'vue-material-design-icons/ArrowLeft.vue'
 import MenuItem from '@/components/MenuItem.vue'
@@ -268,6 +268,9 @@ const textareaInput = (e) => {
                             </div>
                             <div class="inline-block rounded-full cursor-pointer p-2 hover:bg-gray-800">
                                     <FileGifBox :size="25" fillColor="#1C9CEF"/>
+                            </div>
+                            <div class="inline-block rounded-full cursor-pointer p-2 hover:bg-gray-800">
+                                    <Emoticon :size="25" fillColor="#1C9CEF"/>
                             </div>
                         </div>
                     </div>

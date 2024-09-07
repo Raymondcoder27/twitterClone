@@ -17,5 +17,5 @@ func main() {
 	r.GET("/tweets", controllers.GetTweets)
 	r.POST("/createTweet", controllers.CreateTweet)
 	r.DELETE("/tweet/:id", controllers.DeleteTweet)
-	r.Run(":8089")
+	r.Run(":8079")
 }

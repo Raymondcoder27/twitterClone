@@ -9,13 +9,20 @@ defineProps({tweets: Array})
 
 const tweets = ref([])
 
-onMounted(()=> {
-  fetch()
-})
 
-const fetch = ()=> {
 
+const fetchTweets = async()=> {
+  try{
+    const response = await axios.get('/tweets')
+    tweets.value = response.data
+  }catch(error){
+    console.error('Error fetching tweets', error)
+  }
 }
+
+onMounted(()=> {
+  fetchTweets()
+})
 </script>
 
 <template>

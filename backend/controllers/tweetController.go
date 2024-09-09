@@ -15,7 +15,7 @@ func GetTweets(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"message": "Error fetching tweets."})
 		return
 	}
-	c.JSON(http.StatusOK, tweets)
+	c.IndentedJSON(http.StatusOK, tweets)
 }
 
 func CreateTweet(c *gin.Context) {

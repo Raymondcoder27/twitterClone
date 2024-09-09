@@ -3,7 +3,7 @@ import {onMounted, ref} from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import TwitterLayout from './Layouts/TwitterLayout.vue';
 import Tweet from './components/Tweet.vue';
-import api from '@config/api'
+import api from '@/config/api'
 // import HelloWorld from './components/HelloWorld.vue'
 defineProps({tweets: Array})
 
@@ -14,7 +14,7 @@ const tweets = ref([])
 
 const fetchTweets = async()=> {
   try{
-    const response = await axios.get('/tweets')
+    const response = await api.get('/tweets')
     tweets.value = response.data
   }catch(error){
     console.error('Error fetching tweets', error)

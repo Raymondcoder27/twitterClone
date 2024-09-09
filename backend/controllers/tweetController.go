@@ -49,7 +49,7 @@ func CreateTweet(c *gin.Context) {
 		return
 	}
 	// var tweet models.Tweet
-	tweet := models.Tweet{Name: body.Name, Handle: body.Handle, Tweet: body.Tweet, Comments: body.Comments, Retweets: body.Retweets, Likes: body.Likes, Analytics: body.Analytics}
+	// tweet := models.Tweet{Name: body.Name, Handle: body.Handle, Tweet: body.Tweet, Comments: body.Comments, Retweets: body.Retweets, Likes: body.Likes, Analytics: body.Analytics}
 
 	if err := initializers.DB.Create(&tweet).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"message": "error creating tweet."})

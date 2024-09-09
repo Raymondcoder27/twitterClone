@@ -9,7 +9,7 @@ api.interceptors.request.use((config) =>{
 })
 
 api.interceptors.response.use(
-    (reponse)=>response,
+    (response) => response,
     (error) => {
         if (error.response != undefined && error.response.status === 401){
 

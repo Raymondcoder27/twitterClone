@@ -34,6 +34,8 @@ func CreateTweet(c *gin.Context) {
 	if err := initializers.DB.Create(&tweet).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"message": "error creating tweet."})
 	}
+
+	c.JSON(http.StatusOK, "Tweet Created.")
 }
 
 func DeleteTweet(c *gin.Context) {

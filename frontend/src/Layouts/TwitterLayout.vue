@@ -27,7 +27,7 @@ let file = ref('')
 let showUpload = ref('')
 let uploadType = ref('')
 
-const getFile = () => {
+const getFile = (e) => {
     file.value = e.target.files[0]
     showUpload.value = URL.createObjectURL(e.target.files[0])
     uploadType.value = file.value.name.split('.').pop();

@@ -20,13 +20,18 @@ func GetTweets(c *gin.Context) {
 
 func CreateTweet(c *gin.Context) {
 	var body struct {
-		Name      string
-		Handle    string
-		Tweet     string
-		Comments  string
-		Retweets  string
-		Likes     string
-		Analytics string
+		Name      string `json:"name"`
+		Handle    string `json:"handle"`
+		Tweet     string `json:"tweet"`
+		Comments  string `json:"comments"`
+		Retweets  string `json:"retweets"`
+		Likes     string `json:"likes"`
+		Analytics string `json:"analytics"`
+	}
+
+	if err := c.Bind(&body); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"message": "invalid request"})
+		return
 	}
 	// var tweet models.Tweet
 	tweet := models.Tweet{Name: body.Name, Handle: body.Handle, Tweet: body.Tweet, Comments: body.Comments, Retweets: body.Retweets, Likes: body.Likes, Analytics: body.Analytics}

@@ -302,6 +302,7 @@ const addTweet=()=>{
                             </div>
                         </div>
                         <button
+                        @click="closeMessageBox()"
                 :disabled="!tweet"
                 :class="tweet ? 'bg-[#1C9CEF] text-white' : 'bg-[#124D77] text-gray-400'"
                  class="hidden md:block font-extrabold px-4 rounded-full cursor-pointer text-[16px] p-1.5">

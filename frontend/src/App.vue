@@ -3,14 +3,15 @@ import { RouterLink, RouterView } from 'vue-router'
 import TwitterLayout from './Layouts/TwitterLayout.vue';
 import Tweet from './components/Tweet.vue';
 // import HelloWorld from './components/HelloWorld.vue'
+defineProps({tweets: Array})
 </script>
 
 <template>
   <TwitterLayout>
     <div class="text-white">
       <div class="border-b border-b-gray-800 mt-2"></div>
-     <div class="flex">
-      <Tweet :tweet="{
+     <div class="flex" v-for="tweet in tweets" :key="tweet">
+      <!-- <Tweet :tweet="{
         name: 'Ronald Mpagi',
         handle: '@Mpagi',
         image: 'https://randomuser.me/api/portraits/men/40.jpg',
@@ -21,7 +22,8 @@ import Tweet from './components/Tweet.vue';
         retweets: '54',
         likes: '87',
         analytics: '81',
-      }" />
+      }" /> -->
+      <Tweet :tweet="tweet"/>
      </div>
     </div>
   </TwitterLayout>

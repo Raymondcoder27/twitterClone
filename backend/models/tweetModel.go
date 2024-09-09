@@ -1,4 +1,3 @@
-// models/tweet.go
 package models
 
 import (
@@ -9,17 +8,17 @@ import (
 
 type Tweet struct {
 	gorm.Model
-	Name      string    `json:"name"`
-	Handle    string    `json:"handle"`
-	Image     string    `json:"image"` // New field for image
-	Tweet     string    `json:"tweet"`
-	File      string    `json:"file"`     // New field for file
-	IsVideo   bool      `json:"is_video"` // New field for is_video
-	Comments  string    `json:"comments"`
-	Retweets  string    `json:"retweets"`
-	Likes     string    `json:"likes"`
-	Analytics string    `json:"analytics"`
-	CreatedAt time.Time `json:"created_at"`
-	UpdatedAt time.Time `json:"updated_at"`
-	DeletedAt gorm.DeletedAt
+	Name      string         `json:"name" binding:"required"` // Validation tag added
+	Handle    string         `json:"handle" binding:"required"`
+	Image     string         `json:"image"` // Now a simple string
+	Tweet     string         `json:"tweet" binding:"required"`
+	File      string         `json:"file"` // Now a simple string
+	IsVideo   bool           `json:"is_video"`
+	Comments  string         `json:"comments"`  // Changed back to string
+	Retweets  string         `json:"retweets"`  // Changed back to string
+	Likes     string         `json:"likes"`     // Changed back to string
+	Analytics string         `json:"analytics"` // Could be structured further if needed
+	CreatedAt time.Time      `json:"created_at"`
+	UpdatedAt time.Time      `json:"updated_at"`
+	DeletedAt gorm.DeletedAt `json:"deleted_at" gorm:"index"`
 }

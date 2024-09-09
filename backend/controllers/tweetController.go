@@ -19,19 +19,32 @@ func GetTweets(c *gin.Context) {
 }
 
 func CreateTweet(c *gin.Context) {
-	// var body struct {
-	// 	Name      string `json:"name"`
-	// 	Handle    string `json:"handle"`
-	// 	Tweet     string `json:"tweet"`
-	// 	Comments  string `json:"comments"`
-	// 	Retweets  string `json:"retweets"`
-	// 	Likes     string `json:"likes"`
-	// 	Analytics string `json:"analytics"`
-	// }
+	name := c.PostForm("name")
+	handle := c.PostForm("handle")
+	tweet := c.PostForm("tweet")
+	comments := c.PostForm("comments")
+	retweets := c.PostForm("retweets")
+	likes := c.PostForm("likes")
+	analytics := c.PostForm("analytics")
 
-	var body models.Tweet
+	// Handle file upload
+	file, _ := c.FormFile("file")
+	if file != nil {
+		// Save the file or process it as needed
+	}
 
-	if err := c.Bind(&body); err != nil {
+	newTweet := models.Tweet{
+		Name:      name,
+		Handle:    handle,
+		Tweet:     tweet,
+		Comments:  comments,
+		Retweets:  retweets,
+		Likes:     likes,
+		Analytics: analytics,
+		// Add file details if needed
+	}
+
+	if err := c.Bind(&newTweet); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"message": "invalid request"})
 		return
 	}

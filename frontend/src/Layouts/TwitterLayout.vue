@@ -44,6 +44,19 @@ const textareaInput = (e) => {
     textarea.value.style.height = `${e.target.scrollHeight}px`;
 }
 
+const addTweet=()=>{
+    if (!tweet.value) return
+
+    let data = new FormData()
+
+    data.append('tweet', tweet.value)
+    data.append('file', file.value)
+
+    router.post('/createTweet', data)
+
+    closeMessageBox()
+}
+
 </script>
 
 <template>

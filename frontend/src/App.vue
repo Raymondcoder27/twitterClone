@@ -3,6 +3,7 @@ import {onMounted, ref} from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import TwitterLayout from './Layouts/TwitterLayout.vue';
 import Tweet from './components/Tweet.vue';
+import api from '@config/api'
 // import HelloWorld from './components/HelloWorld.vue'
 defineProps({tweets: Array})
 

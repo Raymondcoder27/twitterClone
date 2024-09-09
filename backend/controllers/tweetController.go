@@ -11,6 +11,9 @@ import (
 
 func GetTweets(c *gin.Context) {
 	var tweets []models.Tweet
+	if err := initializers.DB.Find(&tweets).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"message": "Error fetching tweets."})
+	}
 	c.JSON(http.StatusOK, tweets)
 }
 

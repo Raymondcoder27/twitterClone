@@ -1,3 +1,4 @@
+// models/tweet.go
 package models
 
 import (
@@ -16,5 +17,6 @@ type Tweet struct {
 	Likes     string `json:"likes"`
 	Analytics string `json:"analytics"`
 	CreatedAt time.Time
+	UpdatedAt time.Time
 	DeletedAt gorm.DeletedAt
 }

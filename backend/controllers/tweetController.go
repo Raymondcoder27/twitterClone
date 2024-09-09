@@ -40,7 +40,7 @@ func CreateTweet(c *gin.Context) {
 		c.JSON(http.StatusInternalServerError, gin.H{"message": "error creating tweet."})
 	}
 
-	c.JSON(http.StatusOK, "Tweet Created.")
+	// c.JSON(http.StatusOK, "Tweet Created.")
 }
 
 func DeleteTweet(c *gin.Context) {

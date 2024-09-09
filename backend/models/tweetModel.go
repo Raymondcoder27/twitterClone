@@ -8,7 +8,6 @@ import (
 
 type Tweet struct {
 	gorm.Model
-	Id        string `json:"id"`
 	Name      string `json:"name"`
 	Handle    string `json:"handle"`
 	Tweet     string `json:"tweet"`

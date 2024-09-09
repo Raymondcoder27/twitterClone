@@ -1,9 +1,21 @@
 <script setup>
+import {onMounted, ref} from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import TwitterLayout from './Layouts/TwitterLayout.vue';
 import Tweet from './components/Tweet.vue';
 // import HelloWorld from './components/HelloWorld.vue'
 defineProps({tweets: Array})
+
+
+const tweets = ref([])
+
+onMounted(()=> {
+  fetch()
+})
+
+const fetch = ()=> {
+
+}
 </script>
 
 <template>

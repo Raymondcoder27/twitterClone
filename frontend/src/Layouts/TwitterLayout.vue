@@ -14,7 +14,7 @@ import FileGifBox from 'vue-material-design-icons/FileGifBox.vue'
 import Emoticon from 'vue-material-design-icons/Emoticon.vue'
 import ArrowLeft from 'vue-material-design-icons/ArrowLeft.vue'
 import MenuItem from '@/components/MenuItem.vue'
-import api from 'config/api'
+import api from '@/config/api'
 
 let randImg1 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}/100`)
 let randImg2 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}/100`)

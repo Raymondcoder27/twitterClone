@@ -14,6 +14,7 @@ import FileGifBox from 'vue-material-design-icons/FileGifBox.vue'
 import Emoticon from 'vue-material-design-icons/Emoticon.vue'
 import ArrowLeft from 'vue-material-design-icons/ArrowLeft.vue'
 import MenuItem from '@/components/MenuItem.vue'
+import api from 'config/api'
 
 let randImg1 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}/100`)
 let randImg2 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}/100`)
@@ -44,7 +45,7 @@ const textareaInput = (e) => {
     textarea.value.style.height = `${e.target.scrollHeight}px`;
 }
 
-const addTweet=()=>{
+const addTweet=async()=>{
     if (!tweet.value) return
 
     let data = new FormData()
@@ -52,9 +53,12 @@ const addTweet=()=>{
     data.append('tweet', tweet.value)
     data.append('file', file.value)
 
-    router.post('/createTweet', data)
-
-    closeMessageBox()
+    try{
+        await api.post('/createTweet', data)
+        closeMessageBox()
+    }catch(error){
+        console.error('error creating tweet:', error)
+    }
 }
 
 </script>

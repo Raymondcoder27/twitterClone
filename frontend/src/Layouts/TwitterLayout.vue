@@ -23,7 +23,7 @@ let textarea = ref(null)
 let createTweet = ref(false)
 let tweet = ref('')
 
-let file = ref('')
+let file = ref(null)
 let showUpload = ref('')
 let uploadType = ref('')
 
@@ -45,6 +45,15 @@ const textareaInput = (e) => {
     textarea.value.style.height = `${e.target.scrollHeight}px`;
 }
 
+const fetchTweets = async()=> {
+  try{
+    const response = await api.get('/tweets')
+    tweets.value = response.data
+  }catch(error){
+    console.error('Error fetching tweets', error)
+  }
+}
+
 const addTweet=async()=>{
     if (!tweet.value) return
 
@@ -56,6 +65,7 @@ const addTweet=async()=>{
     try{
         await api.post('/createTweet', data)
         closeMessageBox()
+        await fetchTweets()
     }catch(error){
         console.error('error creating tweet:', error)
     }
@@ -306,7 +316,7 @@ const addTweet=async()=>{
                             </div>
                         </div>
                         <button
-                        @click="closeMessageBox()"
+                        @click="addTweet()"
                 :disabled="!tweet"
                 :class="tweet ? 'bg-[#1C9CEF] text-white' : 'bg-[#124D77] text-gray-400'"
                  class="hidden md:block font-extrabold px-4 rounded-full cursor-pointer text-[16px] p-1.5">

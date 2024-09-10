@@ -7,12 +7,17 @@
     import DotsHorizontal from 'vue-material-design-icons/DotsHorizontal.vue'
     import BookMarkOutline from 'vue-material-design-icons/BookmarkOutline.vue'
     import TrashCanOutline from 'vue-material-design-icons/TrashCanOutline.vue'
+    import api from '@/config/api'
 
     const props = defineProps({
         tweet: Object
     })
 
     let openOptions = ref(false)
+
+    const deleteTweet = async(id)  => {
+        api.delete('/tweet/'+id)
+    }
 </script>
 
 <template>
@@ -24,11 +29,22 @@
             <div class="flex items-center">
                 <div>{{tweet.name}}</div>
                 <span class="font-[300] text-[15px] pl-2 text-gray-500">{{ tweet.handle }}</span>
+                <!-- <span class="font-[300] text-[15px] pl-2 text-gray-500">{{ tweet.created_at }}h</span> -->
             </div>
             <div class="hover:bg-gray-800 rounded-full cursor-pointer relative">
                 <button type="button" class="block p-2">
                     <DotsHorizontal @click="openOptions = !openOptions" />
                 </button>
+
+                <div
+                v-if="openOptions" class="absolute mt-1 right-0 bg-black border border-gray-700 rounded-lg shadow-lg w-[300px]">
+                    <Link
+                    as="button"
+                    @click="deleteTweet()">
+                    <TrashCanOutline class="pr-3 " fillColor="#DC2626" :size="18"/>
+                    <span class="text-red-600 font-extrabold">Delete</span>
+                </Link>
+                </div>
             </div>
         </div>
 

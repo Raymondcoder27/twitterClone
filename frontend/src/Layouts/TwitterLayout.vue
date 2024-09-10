@@ -22,6 +22,7 @@ let randImg2 = ref(`https://picsum.photos/id/${(Math.random() * 200).toFixed(0)}
 let textarea = ref(null)
 let createTweet = ref(false)
 let tweet = ref('')
+const tweets = ref([])
 
 let file = ref(null)
 let showUpload = ref('')

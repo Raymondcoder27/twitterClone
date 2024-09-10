@@ -3,6 +3,7 @@ package controllers
 import (
 	"fmt"
 	"net/http"
+	"strconv"
 	"time"
 
 	"math/rand"
@@ -34,10 +35,10 @@ func CreateTweet(c *gin.Context) {
 	// name := c.PostForm("name")
 	// handle := c.PostForm("handle")
 	tweetText := c.PostForm("tweet")
-	comments := string(rand.Intn(500))
-	retweets := string(rand.Intn(500))
-	likes := string(rand.Intn(500))
-	analytics := string(rand.Intn(500))
+	comments := strconv.Itoa(rand.Intn(500))
+	retweets := strconv.Itoa(rand.Intn(500))
+	likes := strconv.Itoa(rand.Intn(500))
+	analytics := strconv.Itoa(rand.Intn(500))
 
 	// Handle file upload if it exists
 	var filePath string

@@ -46,15 +46,6 @@ const textareaInput = (e) => {
     textarea.value.style.height = `${e.target.scrollHeight}px`;
 }
 
-const fetchTweets = async()=> {
-  try{
-    const response = await api.get('/tweets')
-    tweets.value = response.data
-  }catch(error){
-    console.error('Error fetching tweets', error)
-  }
-}
-
 const addTweet=async()=>{
     if (!tweet.value) return
 
@@ -66,11 +57,20 @@ const addTweet=async()=>{
     try{
         await api.post('/createTweet', data)
         closeMessageBox()
-        window.location.reload()
-        await fetchTweets()
+        // window.location.reload()
+        fetchTweets()
     }catch(error){
         console.error('error creating tweet:', error)
     }
+}
+
+const fetchTweets = async()=> {
+  try{
+    const response = await api.get('/tweets')
+    tweets.value = response.data
+  }catch(error){
+    console.error('Error fetching tweets', error)
+  }
 }
 </script>
 

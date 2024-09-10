@@ -14,21 +14,37 @@
     })
 
     let openOptions = ref(false)
+    const tweets = ref([])
+  
+
+    const fetchTweets = async()=> {
+  try{
+    const response = await api.get('/tweets')
+    tweets.value = response.data
+  }catch(error){
+    console.error('Error fetching tweets', error)
+  }
+}
 
 
     const deleteTweet = async(id)  => {
         try{
         await api.delete('/tweet/'+id)
-        window.location.reload()
+        // window.location.reload()
+
         // closeMessageBox()
         // window.location.reload()
-     await fetchTweets()
+         fetchTweets()
     // alert(JSON.stringify(tweets))
 
     }catch(error){
         console.error('error deleting tweet:', error)
     }
     }
+
+    onMounted(()=>{
+        fetchTweets()
+    })
 </script>
 
 <template>

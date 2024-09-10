@@ -66,7 +66,8 @@ const addTweet=async()=>{
     try{
         await api.post('/createTweet', data)
         closeMessageBox()
-        await fetchTweets()
+        const updatedTweets = await fetchTweets()
+    console.log('Updated tweets:', updatedTweets)
     }catch(error){
         console.error('error creating tweet:', error)
     }

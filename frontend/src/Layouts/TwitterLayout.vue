@@ -110,9 +110,9 @@ const fetchTweets = async()=> {
             <div class="border-x border-gray-800 relative lg:w-7/12 w-11/12">
                 <div class="bg-black bg-opacity-50 backdrop-blur-md z-10 absolute w-full">
                     <div class="border-gray-800 border-b w-full">
-                        <div class="w-full text-white font-extrabold p-4 text-[22px]">
+                        <!-- <div class="w-full text-white font-extrabold p-4 text-[22px]">
                             Home
-                        </div>
+                        </div> -->
                         <div class="flex">
                             <div class="flex items-center justify-center hover:bg-opacity-30 cursor-pointer hover:bg-gray-500 p-4 text-white font-extrabold text-[17px] w-full h-[60px]">
                                 <div class="inline-block text-center border-b-4 h-[60px] rounded-sm border-b-[#1C9CEF]">

@@ -64,8 +64,8 @@
                 <!-- <span class="font-[300] text-[15px] pl-2 text-gray-500">{{ tweet.created_at }}h</span> -->
             </div>
             <div class="hover:bg-gray-800 rounded-full cursor-pointer relative">
-                <button type="button" class="block p-2">
-                    <DotsHorizontal @click="openOptions = !openOptions" />
+                <button @click="openOptions = !openOptions"  type="button" class="block p-2">
+                    <DotsHorizontal />
                 </button>
 
                 <div

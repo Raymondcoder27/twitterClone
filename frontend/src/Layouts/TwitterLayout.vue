@@ -46,6 +46,9 @@ const textareaInput = (e) => {
     textarea.value.style.height = `${e.target.scrollHeight}px`;
 }
 
+
+const emit = defineEmits()
+
 const addTweet=async()=>{
     if (!tweet.value) return
 
@@ -56,6 +59,7 @@ const addTweet=async()=>{
 
     try{
         await api.post('/createTweet', data)
+        emit('tweetAdded')
         closeMessageBox()
         // window.location.reload()
         fetchTweets()

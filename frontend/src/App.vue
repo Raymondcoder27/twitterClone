@@ -26,13 +26,17 @@ const handleTweetDeleted = () => {
   fetchTweets()  // Re-fetch tweets when a tweet is deleted
 }
 
+const handleTweetAdded = () => {
+  fetchTweets()
+}
+
 onMounted(()=> {
   fetchTweets()
 })
 </script>
 
 <template>
-  <TwitterLayout>
+  <TwitterLayout @tweetAdded="handleTweetAdded">
     <div class="text-white">
       <div class="border-b border-b-gray-800 mt-2"></div>
      <div class="flex" v-for="tweet in tweets" :key="tweet">

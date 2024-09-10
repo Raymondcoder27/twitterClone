@@ -3,7 +3,6 @@ package main
 import (
 	"example.com/twitterClone/controllers"
 	"example.com/twitterClone/initializers"
-	"example.com/twitterClone/seeders"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 )
@@ -15,7 +14,7 @@ func init() {
 }
 
 func main() {
-	seeders.SeedTweets()
+	// seeders.SeedTweets()
 	r := gin.Default()
 
 	config := cors.Config{

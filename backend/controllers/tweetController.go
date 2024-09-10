@@ -19,18 +19,10 @@ func GetTweets(c *gin.Context) {
 }
 
 func CreateTweet(c *gin.Context) {
-	var requestData struct {
-		Name      string `json:"name"`
-		Handle    string `json:"handle"`
-		Tweet     string `json:"tweet"`
-		Comments  string `json:"comments"`
-		Retweets  string `json:"retweets"`
-		Likes     string `json:"likes"`
-		Analytics string `json:"analytics"`
-	}
+	var requestData models.Tweet
 
 	// Bind the JSON request payload to requestData
-	if err := c.BindJSON(&requestData); err != nil {
+	if err := c.Bind(&requestData); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"message": "Invalid request"})
 		return
 	}

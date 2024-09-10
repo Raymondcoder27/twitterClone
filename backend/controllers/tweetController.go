@@ -52,7 +52,7 @@ func CreateTweet(c *gin.Context) {
 		Name:      "Ronald Mpagi",
 		Handle:    "@mpagi",
 		Image:     "https://randomuser.me/api/portraits/men/40.jpg",
-		CreatedAt: time.Now().Hour(),
+		CreatedAt: time.Now(),
 		Tweet:     tweetText,
 		Comments:  comments,
 		Retweets:  retweets,

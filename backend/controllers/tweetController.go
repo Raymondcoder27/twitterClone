@@ -48,8 +48,8 @@ func CreateTweet(c *gin.Context) {
 
 	// Create the tweet object, including the file path if a file was uploaded
 	tweet := models.Tweet{
-		Name:      name,
-		Handle:    handle,
+		Name:      "Ronald Mpagi",
+		Handle:    "@mpagi",
 		Tweet:     tweetText,
 		Comments:  comments,
 		Retweets:  retweets,

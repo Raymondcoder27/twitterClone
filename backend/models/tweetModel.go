@@ -18,7 +18,7 @@ type Tweet struct {
 	Retweets  string         `json:"retweets"`  // Changed back to string
 	Likes     string         `json:"likes"`     // Changed back to string
 	Analytics string         `json:"analytics"` // Could be structured further if needed
-	CreatedAt int            `json:"created_at"`
+	CreatedAt time.Time      `json:"created_at"`
 	UpdatedAt time.Time      `json:"updated_at"`
 	DeletedAt gorm.DeletedAt `json:"deleted_at" gorm:"index"`
 }

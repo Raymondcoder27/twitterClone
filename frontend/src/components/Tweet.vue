@@ -16,7 +16,14 @@
     let openOptions = ref(false)
 
     const deleteTweet = async(id)  => {
-        api.delete('/tweet/'+id)
+        try{
+        await api.delete('/tweet/'+id)
+        closeMessageBox()
+        window.location.reload()
+        await fetchTweets()
+    }catch(error){
+        console.error('error creating tweet:', error)
+    }
     }
 </script>
 
@@ -37,13 +44,14 @@
                 </button>
 
                 <div
-                v-if="openOptions" class="absolute mt-1 right-0 bg-black border border-gray-700 rounded-lg shadow-lg w-[300px]">
-                    <Link
+                v-if="openOptions" class="absolute mt-1 p-3 right-0 bg-black border border-gray-700 rounded-lg shadow-lg w-[300px]">
+                    <div
+                    class="flex"
                     as="button"
-                    @click="deleteTweet()">
+                    @click="deleteTweet(id)">
                     <TrashCanOutline class="pr-3 " fillColor="#DC2626" :size="18"/>
                     <span class="text-red-600 font-extrabold">Delete</span>
-                </Link>
+                </div>
                 </div>
             </div>
         </div>

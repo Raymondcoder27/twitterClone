@@ -22,6 +22,10 @@ const fetchTweets = async()=> {
   }
 }
 
+const handleTweetDeleted = () => {
+  fetchTweets()  // Re-fetch tweets when a tweet is deleted
+}
+
 onMounted(()=> {
   fetchTweets()
 })
@@ -44,7 +48,7 @@ onMounted(()=> {
         likes: '87',
         analytics: '81',
       }" /> -->
-      <Tweet :tweet="tweet"/>
+      <Tweet :tweet="tweet" @tweetDeleted="handleTweetDeleted"/>
      </div>
     </div>
   </TwitterLayout>

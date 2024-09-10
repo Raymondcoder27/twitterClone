@@ -9,6 +9,9 @@
     import TrashCanOutline from 'vue-material-design-icons/TrashCanOutline.vue'
     import api from '@/config/api'
 
+
+    const emit = defineEmits()
+
     const props = defineProps({
         tweet: Object
     })
@@ -30,10 +33,12 @@
     const deleteTweet = async(id)  => {
         try{
         await api.delete('/tweet/'+id)
+        emit('tweetDeleted')  // Emit event when tweet is deleted
         // window.location.reload()
 
         // closeMessageBox()
         // window.location.reload()
+        console.log(`Tweet with ID ${id} deleted`);
          fetchTweets()
     // alert(JSON.stringify(tweets))
 

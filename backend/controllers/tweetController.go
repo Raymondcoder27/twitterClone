@@ -19,43 +19,57 @@ func GetTweets(c *gin.Context) {
 }
 
 func CreateTweet(c *gin.Context) {
-	name := c.PostForm("name")
-	handle := c.PostForm("handle")
-	tweet := c.PostForm("tweet")
-	comments := c.PostForm("comments")
-	retweets := c.PostForm("retweets")
-	likes := c.PostForm("likes")
-	analytics := c.PostForm("analytics")
+	var requestData struct {
+		Name      string `json:"name"`
+		Handle    string `json:"handle"`
+		Tweet     string `json:"tweet"`
+		Comments  string `json:"comments"`
+		Retweets  string `json:"retweets"`
+		Likes     string `json:"likes"`
+		Analytics string `json:"analytics"`
+	}
+
+	// Bind the JSON request payload to requestData
+	if err := c.BindJSON(&requestData); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"message": "Invalid request"})
+		return
+	}
 
 	// Handle file upload
-	file, _ := c.FormFile("file")
-	if file != nil {
-		// Save the file or process it as needed
+	file, err := c.FormFile("file")
+	if err != nil {
+		// If no file, just process the tweet text
+		c.JSON(http.StatusOK, gin.H{
+			"message": "Tweet created successfully without a file",
+			"tweet":   requestData,
+		})
+		return
+	}
+
+	// If a file is uploaded, handle it
+	path := "./uploads/" + file.Filename
+	if err := c.SaveUploadedFile(file, path); err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "file saving failed"})
+		return
 	}
 
 	newTweet := models.Tweet{
-		Name:      name,
-		Handle:    handle,
-		Tweet:     tweet,
-		Comments:  comments,
-		Retweets:  retweets,
-		Likes:     likes,
-		Analytics: analytics,
+		Name:      requestData.Name,
+		Handle:    requestData.Handle,
+		Tweet:     requestData.Tweet,
+		Comments:  requestData.Comments,
+		Retweets:  requestData.Retweets,
+		Likes:     requestData.Likes,
+		Analytics: requestData.Analytics,
 		// Add file details if needed
 	}
 
-	if err := c.Bind(&newTweet); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"message": "invalid request"})
+	if err := initializers.DB.Create(&newTweet).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"message": "Error creating tweet."})
 		return
 	}
-	// var tweet models.Tweet
-	// tweet := models.Tweet{Name: body.Name, Handle: body.Handle, Tweet: body.Tweet, Comments: body.Comments, Retweets: body.Retweets, Likes: body.Likes, Analytics: body.Analytics}
 
-	if err := initializers.DB.Create(&tweet).Error; err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"message": "error creating tweet."})
-	}
-
-	// c.JSON(http.StatusOK, "Tweet Created.")
+	c.JSON(http.StatusOK, gin.H{"message": "Tweet created successfully"})
 }
 
 func DeleteTweet(c *gin.Context) {

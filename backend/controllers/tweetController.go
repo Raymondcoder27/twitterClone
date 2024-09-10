@@ -19,49 +19,30 @@ func GetTweets(c *gin.Context) {
 }
 
 func CreateTweet(c *gin.Context) {
-	var requestData models.Tweet
+	// var body struct {
+	// 	Name      string `json:"name"`
+	// 	Handle    string `json:"handle"`
+	// 	Tweet     string `json:"tweet"`
+	// 	Comments  string `json:"comments"`
+	// 	Retweets  string `json:"retweets"`
+	// 	Likes     string `json:"likes"`
+	// 	Analytics string `json:"analytics"`
+	// }
 
-	// Bind the JSON request payload to requestData
-	if err := c.Bind(&requestData); err != nil {
-		c.JSON(http.StatusBadRequest, gin.H{"message": "Invalid request"})
+	var body models.Tweet
+
+	if err := c.Bind(&body); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"message": "invalid request"})
 		return
 	}
+	// var tweet models.Tweet
+	tweet := models.Tweet{Name: body.Name, Handle: body.Handle, Tweet: body.Tweet, Comments: body.Comments, Retweets: body.Retweets, Likes: body.Likes, Analytics: body.Analytics}
 
-	// Handle file upload
-	file, err := c.FormFile("file")
-	if err != nil {
-		// If no file, just process the tweet text
-		c.JSON(http.StatusOK, gin.H{
-			"message": "Tweet created successfully without a file",
-			"tweet":   requestData,
-		})
-		return
+	if err := initializers.DB.Create(&tweet).Error; err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"message": "error creating tweet."})
 	}
 
-	// If a file is uploaded, handle it
-	path := "./uploads/" + file.Filename
-	if err := c.SaveUploadedFile(file, path); err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "file saving failed"})
-		return
-	}
-
-	newTweet := models.Tweet{
-		Name:      requestData.Name,
-		Handle:    requestData.Handle,
-		Tweet:     requestData.Tweet,
-		Comments:  requestData.Comments,
-		Retweets:  requestData.Retweets,
-		Likes:     requestData.Likes,
-		Analytics: requestData.Analytics,
-		// Add file details if needed
-	}
-
-	if err := initializers.DB.Create(&newTweet).Error; err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"message": "Error creating tweet."})
-		return
-	}
-
-	c.JSON(http.StatusOK, gin.H{"message": "Tweet created successfully"})
+	// c.JSON(http.StatusOK, "Tweet Created.")
 }
 
 func DeleteTweet(c *gin.Context) {

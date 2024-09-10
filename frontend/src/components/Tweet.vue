@@ -15,14 +15,18 @@
 
     let openOptions = ref(false)
 
+
     const deleteTweet = async(id)  => {
         try{
         await api.delete('/tweet/'+id)
-        closeMessageBox()
         window.location.reload()
-        await fetchTweets()
+        // closeMessageBox()
+        // window.location.reload()
+     await fetchTweets()
+    // alert(JSON.stringify(tweets))
+
     }catch(error){
-        console.error('error creating tweet:', error)
+        console.error('error deleting tweet:', error)
     }
     }
 </script>
@@ -48,7 +52,7 @@
                     <div
                     class="flex"
                     as="button"
-                    @click="deleteTweet(id)">
+                    @click="deleteTweet(tweet.ID)">
                     <TrashCanOutline class="pr-3 " fillColor="#DC2626" :size="18"/>
                     <span class="text-red-600 font-extrabold">Delete</span>
                 </div>

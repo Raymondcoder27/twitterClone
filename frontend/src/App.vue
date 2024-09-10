@@ -16,6 +16,7 @@ const fetchTweets = async()=> {
   try{
     const response = await api.get('/tweets')
     tweets.value = response.data
+    // alert(JSON.stringify(response))
   }catch(error){
     console.error('Error fetching tweets', error)
   }

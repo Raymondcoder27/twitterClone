@@ -3,6 +3,7 @@ package controllers
 import (
 	"fmt"
 	"net/http"
+	"time"
 
 	"example.com/twitterClone/initializers"
 	"example.com/twitterClone/models"
@@ -50,6 +51,8 @@ func CreateTweet(c *gin.Context) {
 	tweet := models.Tweet{
 		Name:      "Ronald Mpagi",
 		Handle:    "@mpagi",
+		Image:     "https://randomuser.me/api/portraits/men/40.jpg",
+		CreatedAt: time.Now().Hour(),
 		Tweet:     tweetText,
 		Comments:  comments,
 		Retweets:  retweets,

@@ -28,8 +28,8 @@ func CreateTweet(c *gin.Context) {
 	}
 
 	// Extract other form fields (tweet details)
-	name := c.PostForm("name")
-	handle := c.PostForm("handle")
+	// name := c.PostForm("name")
+	// handle := c.PostForm("handle")
 	tweetText := c.PostForm("tweet")
 	comments := c.PostForm("comments")
 	retweets := c.PostForm("retweets")

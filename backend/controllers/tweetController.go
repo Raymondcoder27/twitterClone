@@ -5,6 +5,8 @@ import (
 	"net/http"
 	"time"
 
+	"math/rand"
+
 	"example.com/twitterClone/initializers"
 	"example.com/twitterClone/models"
 	"github.com/gin-gonic/gin"
@@ -32,10 +34,10 @@ func CreateTweet(c *gin.Context) {
 	// name := c.PostForm("name")
 	// handle := c.PostForm("handle")
 	tweetText := c.PostForm("tweet")
-	comments := c.PostForm("comments")
-	retweets := c.PostForm("retweets")
-	likes := c.PostForm("likes")
-	analytics := c.PostForm("analytics")
+	comments := string(rand.Intn(500))
+	retweets := string(rand.Intn(500))
+	likes := string(rand.Intn(500))
+	analytics := string(rand.Intn(500))
 
 	// Handle file upload if it exists
 	var filePath string

@@ -43,6 +43,8 @@ COPY --from=frontend_build /app/frontend/dist /usr/share/nginx/html
 
 #Copy backend binary and .env to the image
 COPY --from=backend_build /app/backend/main /usr/local/bin/main
+# COPY --from=backend_build /app/backend/.env /usr/local/bin/.env
+
 
 #Copy start.sh script to the image and make it executable
 COPY start2.sh /usr/local/bin/start2.sh

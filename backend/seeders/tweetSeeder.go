@@ -7,6 +7,7 @@ import (
 
 	"example.com/twitterClone/initializers"
 	"example.com/twitterClone/models" // Adjust import path as necessary
+	"gorm.io/gorm"
 )
 
 func SeedTweets() {
@@ -70,9 +71,23 @@ func SeedTweets() {
 		},
 	}
 
+	// for _, tweet := range tweets {
+	// 	if err := db.Create(&tweet).Error; err != nil {
+	// 		log.Fatalf("Failed to insert tweet: %v", err)
+	// 	}
+	// }
+
 	for _, tweet := range tweets {
-		if err := db.Create(&tweet).Error; err != nil {
-			log.Fatalf("Failed to insert tweet: %v", err)
+		var existingTweet models.Tweet
+		// Check if tweet already exists by handle
+		result := db.Where("handle = ?", tweet.Handle).First(&existingTweet)
+		if result.Error == gorm.ErrRecordNotFound {
+			// Tweet does not exist, so we can create a new record
+			if err := db.Create(&tweet).Error; err != nil {
+				log.Printf("Error creating tweet: %v", err)
+			}
+		} else {
+			log.Printf("Tweet with handle %s already exists, skipping...", tweet.Handle)
 		}
 	}
 

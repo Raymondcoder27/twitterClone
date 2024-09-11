@@ -12,7 +12,7 @@ RUN npm run build
 RUN npm install -g serve
 
 #Stage 2 - build the backend
-FROM golang:1.20 AS backend_build
+FROM golang:1.23 AS backend_build
 
 WORKDIR /app/backend
 
@@ -45,12 +45,12 @@ COPY --from=frontend_build /app/frontend/dist /usr/share/nginx/html
 COPY --from=backend_build /app/backend/main /usr/local/bin/main
 
 #Copy start.sh script to the image and make it executable
-COPY start.sh /usr/local/bin/start.sh
-RUN chmod +x /usr/local/bin/start.sh
+COPY start2.sh /usr/local/bin/start2.sh
+RUN chmod +x /usr/local/bin/start2.sh
 
 #Expose ports 
 EXPOSE 6677
 EXPOSE 4100
 
 #Start the backend and frontend
-ENTRYPOINT [ "/usr/local/bin/start.sh" ]
+ENTRYPOINT [ "/usr/local/bin/start2.sh" ]

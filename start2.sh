@@ -6,4 +6,4 @@ fi
 /usr/local/bin/main & 
 
 #Start nginx
-serve -s /usr/share/nginx/html -l 80
+serve -s /usr/share/nginx/html -l 90

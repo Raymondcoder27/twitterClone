@@ -61,7 +61,7 @@ func CreateTweet(c *gin.Context) {
 		Retweets:  retweets,
 		Likes:     likes,
 		Analytics: analytics,
-		//FilePath:  filePath, // Add file path if there's a file
+		FilePath:  filePath, // Add file path if there's a file
 	}
 
 	// Save the tweet to the database

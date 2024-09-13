@@ -11,7 +11,7 @@ import (
 
 func SeedTweets() {
 	db := initializers.DB
-	tweets := []models.Tweet2{
+	tweets := []models.Tweet{
 		{
 			Name:      "Johnni Ward",
 			Handle:    "@johnniward",
@@ -57,7 +57,7 @@ func SeedTweets() {
 	}
 
 	for _, tweet := range tweets {
-		var existingTweet models.Tweet2
+		var existingTweet models.Tweet
 		// Check if tweet already exists by handle
 		result := db.Where("handle = ?", tweet.Handle).First(&existingTweet)
 		if result.Error == gorm.ErrRecordNotFound {

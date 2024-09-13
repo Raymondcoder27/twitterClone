@@ -40,7 +40,7 @@ func ConnectToDB() {
 }
 
 func MigrateDB() {
-	err := DB.AutoMigrate(&models.Tweet2{})
+	err := DB.AutoMigrate(&models.Tweet{})
 	if err != nil {
 		log.Printf("Error migrating database: %v", err)
 	}

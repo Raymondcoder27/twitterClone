@@ -15,7 +15,7 @@ import (
 )
 
 func GetTweets(c *gin.Context) {
-	var tweets []models.Tweet
+	var tweets []models.Tweet2
 	if err := initializers.DB.Find(&tweets).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"message": "Error fetching tweets."})
 		return
@@ -51,7 +51,7 @@ func CreateTweet(c *gin.Context) {
 	}
 
 	// Create the tweet object, including the file path if a file was uploaded
-	tweet := models.Tweet{
+	tweet := models.Tweet2{
 		Name:      "Ronald Mpagi",
 		Handle:    "@mpagi",
 		Image:     "https://randomuser.me/api/portraits/men/40.jpg",
@@ -76,7 +76,7 @@ func CreateTweet(c *gin.Context) {
 
 func DeleteTweet(c *gin.Context) {
 	id := c.Param("id")
-	var tweet models.Tweet
+	var tweet models.Tweet2
 
 	if err := initializers.DB.Where("id=?", id).First(&tweet).Error; err != nil {
 		fmt.Println("tweet not found")

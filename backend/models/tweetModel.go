@@ -6,7 +6,7 @@ import (
 	"gorm.io/gorm"
 )
 
-type Tweet struct {
+type Tweet2 struct {
 	gorm.Model
 	Name      string         `json:"name" binding:"required"` // Validation tag added
 	Handle    string         `json:"handle" binding:"required"`

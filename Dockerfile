@@ -55,4 +55,4 @@ EXPOSE 6677
 EXPOSE 4100
 
 #Start the backend and frontend
-ENTRYPOINT [ "/usr/local/bin/start2.sh" ]
+ENTRYPOINT [ "/usr/local/bin/start2.sh" ] 

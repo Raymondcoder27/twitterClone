@@ -62,7 +62,7 @@ const addTweet=async()=>{
         emit('tweetAdded')
         closeMessageBox()
         // window.location.reload()
-        fetchTweets()
+        // fetchTweets()
     }catch(error){
         console.error('error creating tweet:', error)
     }

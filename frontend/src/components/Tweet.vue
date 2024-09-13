@@ -38,8 +38,8 @@
 
         // closeMessageBox()
         // window.location.reload()
-        console.log(`Tweet with ID ${id} deleted`);
-         fetchTweets()
+        // console.log(`Tweet with ID ${id} deleted`);
+        //  fetchTweets()
     // alert(JSON.stringify(tweets))
 
     }catch(error){
@@ -47,9 +47,9 @@
     }
     }
 
-    onMounted(()=>{
-        fetchTweets()
-    })
+    // onMounted(()=>{
+    //     fetchTweets()
+    // })
 </script>
 
 <template>

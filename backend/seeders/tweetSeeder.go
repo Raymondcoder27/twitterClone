@@ -11,7 +11,7 @@ import (
 
 func SeedTweets() {
 	db := initializers.DB
-	tweets := []models.Tweet{
+	tweets := []models.Tweet2{
 		{
 			Name:      "Johnni Ward",
 			Handle:    "@johnniward",

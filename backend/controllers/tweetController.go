@@ -16,11 +16,13 @@ import (
 
 func GetTweets(c *gin.Context) {
 	var tweets []models.Tweet
-	if err := initializers.DB.Find(&tweets).Error; err != nil {
+	if err := initializers.DB.Order("created_at desc").Find(&tweets).Error; err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"message": "Error fetching tweets."})
 		return
 	}
 	c.IndentedJSON(http.StatusOK, tweets)
+
+	// .Order("created_at desc").Find(&posts)
 }
 
 func CreateTweet(c *gin.Context) {

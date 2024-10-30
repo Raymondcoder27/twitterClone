@@ -127,7 +127,6 @@ const fetchTweets = async()=> {
                     </div>
                 </div>
 
-
                 <div class="absolute top-0 z-0 h-full overflow-auto scrollbar-hide">
                 <div class="mt-[126px]"></div>
                 <slot />

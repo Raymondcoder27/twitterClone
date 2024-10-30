@@ -20,7 +20,6 @@ func GetTweets(c *gin.Context) {
 		return
 	}
 	c.IndentedJSON(http.StatusOK, tweets)
-
 	// .Order("created_at desc").Find(&posts)
 }
 

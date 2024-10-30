@@ -2,11 +2,10 @@ package controllers
 
 import (
 	"fmt"
+	"math/rand"
 	"net/http"
 	"strconv"
 	"time"
-
-	"math/rand"
 
 	"example.com/twitterClone/initializers"
 	"example.com/twitterClone/models"

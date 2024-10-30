@@ -87,5 +87,4 @@ func DeleteTweet(c *gin.Context) {
 		fmt.Printf("tweet not found %v", err)
 		return
 	}
-
 }

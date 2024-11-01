@@ -244,30 +244,6 @@ const fetchTweets = async () => {
               <DotsHorizontal fillColor="#FFFFFF" />
             </div>
           </div>
-          <!-- <div class="hover:bg-neutral-950 cursor-pointer transition duration-200 ease-in-out">
-                        <div class="flex justify-between p-3 ">
-                            <div>
-                                <div class="text-gray-400 text-[13px]">Trending in Uganda</div>
-                                <div class="w-full text-white font-extrabold text-[15px]">
-                                    Namboole
-                                </div>
-                                <div class="text-gray-400 text-[14px]">2k posts</div>
-                            </div>
-                            <DotsHorizontal fillColor="#FFFFFF" />
-                        </div>
-                    </div>   -->
-          <!-- <div class="hover:bg-neutral-950 cursor-pointer transition duration-200 ease-in-out">
-                        <div class="flex justify-between p-3 ">
-                            <div>
-                                <div class="text-gray-400 text-[13px]">Trending in Kampala</div>
-                                <div class="w-full text-white font-extrabold text-[15px]">
-                                    Gashumba
-                                </div>
-                                <div class="text-gray-400 text-[14px]">13k posts</div>
-                            </div>
-                            <DotsHorizontal fillColor="#FFFFFF" />
-                        </div>
-                    </div> -->
         </div>
       </div>
     </div>
